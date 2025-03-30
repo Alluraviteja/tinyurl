@@ -1,0 +1,2 @@
+org.springframework.test.context.ContextCustomizerFactory = com.learning.\
+    tinyurl.config.SqlTestContainersSpringContextCustomizerFactory
