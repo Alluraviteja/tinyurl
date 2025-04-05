@@ -32,12 +32,18 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:TinyURLX;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    username: TinyURLX
-    password:
+    url: jdbc:postgresql://localhost:5432/tinyurl
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
     hikari:
       poolName: Hikari
       auto-commit: false
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        ddl-auto: update
+      show-sql: true
   h2:
     console:
       # disable spring boot built-in h2-console since we start it manually with correct configuration
